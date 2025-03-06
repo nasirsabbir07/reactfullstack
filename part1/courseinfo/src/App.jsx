@@ -5,16 +5,18 @@ const Header = (props) => {
 const Content = (props) => {
   return (
     <div>
-      <p>
-        {props.toc[0].name}: {props.toc[0].exercises} exercises
-      </p>
-      <p>
-        {props.toc[1].name}: {props.toc[1].exercises} exercises
-      </p>
-      <p>
-        {props.toc[2].name}: {props.toc[2].exercises} exercises
-      </p>
+      <Part part={props.toc[0].name} exercise={props.toc[0].exercises} exercises></Part>
+      <Part part={props.toc[1].name} exercise={props.toc[1].exercises} exercises></Part>
+      <Part part={props.toc[2].name} exercise={props.toc[2].exercises} exercises></Part>
     </div>
+  );
+};
+
+const Part = (props) => {
+  return (
+    <p>
+      {props.part}: {props.exercise}
+    </p>
   );
 };
 
